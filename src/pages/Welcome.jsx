@@ -63,7 +63,7 @@ export default function Welcome() {
       {/* Footer */}
       <div className="animate-fade-in stagger-5 pb-8 text-center relative z-10">
         <p className="text-primary-300 text-xs font-medium">
-          Powered by AES Schools • Academic Year 2025-26
+          Powered by AES Schools • Academic Year 2026-27
         </p>
       </div>
     </div>
