@@ -60,14 +60,24 @@ export const CATEGORIES = [
     description: 'Test your knowledge',
   },
   {
-    id: 'dance',
-    name: 'Dance',
-    code: 'DNC',
+    id: 'solo_dance',
+    name: 'Solo Dance',
+    code: 'SLD',
     icon: '💃',
     color: '#97266D',
     bg: '#FFF5F7',
     border: '#FBB6CE',
-    description: 'Move to the rhythm',
+    description: 'Solo performance',
+  },
+  {
+    id: 'group_dance',
+    name: 'Group Dance',
+    code: 'GRD',
+    icon: '🕺',
+    color: '#702459',
+    bg: '#FFF0F7',
+    border: '#F687B3',
+    description: 'Group performance',
   },
 ];
 
@@ -102,7 +112,12 @@ export const LEVELS = {
     { id: 'l1', name: 'Level 1', classes: 'Classes VI – VIII' },
     { id: 'l2', name: 'Level 2', classes: 'Classes IX – XII' },
   ],
-  dance: [
+  solo_dance: [
+    { id: 'l1', name: 'Level 1', classes: 'Classes III – V' },
+    { id: 'l2', name: 'Level 2', classes: 'Classes VI – VIII' },
+    { id: 'l3', name: 'Level 3', classes: 'Classes IX – XII' },
+  ],
+  group_dance: [
     { id: 'l1', name: 'Level 1', classes: 'Classes III – V' },
     { id: 'l2', name: 'Level 2', classes: 'Classes VI – VIII' },
     { id: 'l3', name: 'Level 3', classes: 'Classes IX – XII' },
