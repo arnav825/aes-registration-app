@@ -104,9 +104,9 @@ export const LEVELS = {
     { id: 'l4', name: 'Level 4', classes: 'Classes IX – XII' },
   ],
   essay: [
-    { id: 'l1', name: 'Level 1', classes: 'Classes VI – VIII' },
-    { id: 'l2', name: 'Level 2', classes: 'Classes IX – XII' },
-    { id: 'l3', name: 'Special Telugu', classes: 'Classes VI – VIII' },
+    { id: 'l1', name: 'Level 1', classes: 'Classes VI – VIII', showLanguage: true },
+    { id: 'l2', name: 'Level 2', classes: 'Classes IX – XII', showLanguage: true },
+    { id: 'l3', name: 'Special Telugu', classes: 'Classes VI – VIII', showLanguage: false },
   ],
   quiz: [
     { id: 'l1', name: 'Level 1', classes: 'Classes VI – VIII' },

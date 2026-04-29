@@ -18,6 +18,7 @@ export default function RegistrationForm() {
     class: '',
     branch: '',
     teacherName: '',
+    language: '',
   });
   const [errors, setErrors]     = useState({});
   const [submitErr, setSubmitErr] = useState('');
@@ -34,6 +35,7 @@ export default function RegistrationForm() {
     if (!form.class.trim())       e.class        = 'Class is required';
     if (!form.branch)             e.branch       = 'Please select a school branch';
     if (!form.teacherName.trim()) e.teacherName  = 'Teacher name is required';
+    if (selectedLevel?.showLanguage && !form.language) e.language = 'Please select a language';
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -67,6 +69,7 @@ export default function RegistrationForm() {
         class:        form.class.trim(),
         branch:       form.branch,
         teacherName:  form.teacherName.trim(),
+        language:     form.language || '',
         categoryId:   selectedCategory.id,
         categoryName: selectedCategory.name,
         categoryCode: selectedCategory.code,
@@ -152,6 +155,29 @@ export default function RegistrationForm() {
           </div>
 
           {field('teacherName', 'Teacher Incharge', 'e.g. Mrs. Priya Verma')}
+
+        {selectedLevel?.showLanguage && (
+          <div className="animate-fade-in-up stagger-4">
+            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5">
+              Language <span className="text-red-400">*</span>
+            </label>
+            <select
+              value={form.language}
+              onChange={e => {
+                setForm(p => ({ ...p, language: e.target.value }));
+                if (errors.language) setErrors(p => ({ ...p, language: '' }));
+              }}
+              className={`input-field ${errors.language ? 'input-error' : ''}`}
+            >
+              <option value="">-- Select Language --</option>
+              <option>English</option>
+              <option>Hindi</option>
+            </select>
+            {errors.language && (
+              <p className="text-red-500 text-xs mt-1 font-medium">{errors.language}</p>
+            )}
+          </div>
+        )}
         </div>
 
         {/* Submit error */}
