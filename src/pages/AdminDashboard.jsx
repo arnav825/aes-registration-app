@@ -312,8 +312,11 @@ export default function AdminDashboard() {
                             Class {reg.class} · {reg.branch}
                           </p>
                           <p className="text-xs text-gray-400 mt-0.5">
-                            {reg.categoryName} · {reg.levelName} · Teacher: {reg.teacherName}
-                          </p>
+  {reg.categoryName} · {reg.levelName} · Teacher: {reg.teacherName}
+  {reg.language && (
+    <span className="ml-1 text-blue-500 font-bold">· 🌐 {reg.language}</span>
+  )}
+</p>
                         </div>
                       </div>
                       <div className="flex gap-1.5 flex-shrink-0">

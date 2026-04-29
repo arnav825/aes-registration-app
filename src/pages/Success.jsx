@@ -30,13 +30,14 @@ export default function Success() {
   };
 
   const rows = [
-    ['Student',  studentName],
-    ['Class',    cls],
-    ['Branch',   branch],
-    ['Teacher',  teacherName],
-    ['Event',    categoryName],
-    ['Level',    `${levelName} (${levelClasses})`],
-  ];
+  ['Student',  studentName],
+  ['Class',    cls],
+  ['Branch',   branch],
+  ['Teacher',  teacherName],
+  ['Event',    categoryName],
+  ['Level',    `${levelName} (${levelClasses})`],
+  ...(completedReg.language ? [['Language', completedReg.language]] : []),
+];
 
   return (
     <div className="screen-container bg-gray-50">
