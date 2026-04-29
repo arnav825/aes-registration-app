@@ -93,9 +93,9 @@ export const LEVELS = {
     { id: 'l4', name: 'Level 4', classes: 'Classes XI – XII' },
   ],
   recitation: [
-    { id: 'l1', name: 'Level 1', classes: 'Classes I – III' },
-    { id: 'l2', name: 'Level 2', classes: 'Classes IV – V' },
-    { id: 'l3', name: 'Special Telugu', classes: 'Classes III – V' },
+    { id: 'l1', name: 'Level 1', classes: 'Classes I – III', showLanguage: true },
+    { id: 'l2', name: 'Level 2', classes: 'Classes IV – V', showLanguage: true },
+    { id: 'l3', name: 'Special Telugu', classes: 'Classes III – V', showLanguage: false },
   ],
   drawing: [
     { id: 'l1', name: 'Level 1', classes: 'Classes I – III' },
