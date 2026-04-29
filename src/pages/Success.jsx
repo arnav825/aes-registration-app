@@ -65,7 +65,7 @@ export default function Success() {
         {/* QR Code */}
         <div className="card animate-fade-in-up stagger-1 text-center">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-3">
-            QR Code (Show at Event)
+            QR Code
           </p>
           <div className="inline-block p-3 bg-white rounded-xl border border-gray-200">
             <QRCodeSVG
