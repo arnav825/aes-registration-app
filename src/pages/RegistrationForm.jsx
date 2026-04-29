@@ -172,6 +172,7 @@ export default function RegistrationForm() {
               <option value="">-- Select Language --</option>
               <option>English</option>
               <option>Hindi</option>
+              <option>Telugu</option>
             </select>
             {errors.language && (
               <p className="text-red-500 text-xs mt-1 font-medium">{errors.language}</p>
