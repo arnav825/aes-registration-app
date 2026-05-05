@@ -93,9 +93,10 @@ export default function AdminDashboard() {
   const [registrations, setRegistrations] = useState([]);
   const [loading, setLoading]   = useState(true);
   const [searchName, setSearchName] = useState('');
-  const [filterCat, setFilterCat]   = useState('');
+  const [filterCat, setFilterCat]       = useState('');
   const [filterBranch, setFilterBranch] = useState('');
   const [filterLevel, setFilterLevel]   = useState('');
+  const [filterLanguage, setFilterLanguage] = useState('');
   const [editingReg, setEditingReg] = useState(null);
   const [deletingId, setDeletingId] = useState(null);
   const [activeTab, setActiveTab]   = useState('list'); // list | stats
@@ -151,6 +152,7 @@ export default function AdminDashboard() {
       'Category':        r.categoryName,
       'Level':           r.levelName,
       'Level Classes':   r.levelClasses,
+      'Language':        r.language || 'N/A',
       'Teacher':         r.teacherName,
       'Timestamp':       r.timestamp?.toDate ? r.timestamp.toDate().toLocaleString() : '',
     }));
@@ -162,11 +164,12 @@ export default function AdminDashboard() {
 
   // ── Filtering ───────────────────────────────────────────────
   const filtered = registrations.filter(r => {
-    const nameMatch   = r.studentName?.toLowerCase().includes(searchName.toLowerCase());
-    const catMatch    = !filterCat    || r.categoryId === filterCat;
-    const branchMatch = !filterBranch || r.branch === filterBranch;
-    const levelMatch  = !filterLevel  || r.levelId === filterLevel;
-    return nameMatch && catMatch && branchMatch && levelMatch;
+    const nameMatch     = r.studentName?.toLowerCase().includes(searchName.toLowerCase());
+    const catMatch      = !filterCat      || r.categoryId === filterCat;
+    const branchMatch   = !filterBranch   || r.branch === filterBranch;
+    const levelMatch    = !filterLevel    || r.levelId === filterLevel;
+    const languageMatch = !filterLanguage || r.language === filterLanguage;
+    return nameMatch && catMatch && branchMatch && levelMatch && languageMatch;
   });
 
   // ── Stats ───────────────────────────────────────────────────
@@ -252,7 +255,7 @@ export default function AdminDashboard() {
               onChange={e => setSearchName(e.target.value)}
               className="input-field text-sm"
             />
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               <select value={filterCat} onChange={e => { setFilterCat(e.target.value); setFilterLevel(''); }} className="input-field text-xs py-2">
                 <option value="">All Events</option>
                 {CATEGORIES.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
@@ -264,6 +267,11 @@ export default function AdminDashboard() {
               <select value={filterLevel} onChange={e => setFilterLevel(e.target.value)} className="input-field text-xs py-2">
                 <option value="">All Levels</option>
                 {availableLevels.map(l => <option key={l.id} value={l.id}>{l.name}</option>)}
+              </select>
+              <select value={filterLanguage} onChange={e => setFilterLanguage(e.target.value)} className="input-field text-xs py-2">
+                <option value="">All Languages</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
               </select>
             </div>
             <div className="flex items-center justify-between">
