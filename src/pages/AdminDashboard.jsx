@@ -272,6 +272,7 @@ export default function AdminDashboard() {
                 <option value="">All Languages</option>
                 <option value="English">English</option>
                 <option value="Hindi">Hindi</option>
+                <option value="Telugu">Telugu</option>
               </select>
             </div>
             <div className="flex items-center justify-between">
